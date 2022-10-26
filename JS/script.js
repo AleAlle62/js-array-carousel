@@ -10,7 +10,7 @@ const eleSlider = document.querySelector('.slider');
 const eleBtnLeft = document.querySelector('.btn-left');
 const eleBtnRight = document.querySelector('.btn-right');
 
-// creaare i tag immagine nell'html
+// creare i tag immagine nell'html
 for (let i = 0; i < arrImages.length; i++) {
 	const eleImg = document.createElement('img');
 	eleImg.src = arrImages[i];
@@ -20,9 +20,9 @@ for (let i = 0; i < arrImages.length; i++) {
 	}
 	eleSlider.append(eleImg);
 }
-// document.querySelector('.slider-img').classList.add('active');
 
-const listEleImg = document.querySelectorAll('.slider-img'); // non e' un array ma qualcosa di simile
+
+const listEleImg = document.querySelectorAll('.slider-img'); 
 
 let activeIndex = 0;
 
@@ -30,6 +30,14 @@ let activeIndex = 0;
 eleBtnRight.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
+
+
+    // ciclo infinto
+
+    if (activeIndex === 0){
+        activeIndex = arrImages.length + 5
+    }
+
 
 	// incrementare l'active index
 	activeIndex++;
@@ -47,6 +55,13 @@ eleBtnLeft.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 
+
+    // ciclo infinito
+    
+    if (activeIndex === [arrImages.length]){
+        activeIndex = - 1
+    }
+
 	// incrementare l'active index
 	activeIndex--;
 
@@ -60,5 +75,3 @@ eleBtnLeft.addEventListener('click', function () {
 });
 
 
-// BONUS 1:
-// Aggiungere il ciclo infinito del carosello. Ovvero se è attiva la prima immagine e l'utente clicca la freccia per andare all’immagine precedente, dovrà comparire l’ultima immagine dell’array e viceversa.
