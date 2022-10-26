@@ -34,15 +34,16 @@ eleBtnRight.addEventListener('click', function () {
 
     // ciclo infinto
 
-    if (activeIndex === 0){
-        activeIndex = arrImages.length + 5
+    if (activeIndex === arrImages.length - 1){
+        activeIndex = 0
+    } else {
+        activeIndex++
     }
 
-
 	// incrementare l'active index
-	activeIndex++;
-
+	// activeIndex++;
 	// aggiungere la classe active all'elemento successivo
+
 	listEleImg[activeIndex].classList.add('active');
 
 	eleBtnLeft.classList.remove('hidden');
@@ -58,20 +59,22 @@ eleBtnLeft.addEventListener('click', function () {
 
     // ciclo infinito
     
-    if (activeIndex === [arrImages.length]){
-        activeIndex = - 1
+    if (activeIndex === 0){
+        activeIndex = listEleImg.length - 1
+    } else {
+        activeIndex--
     }
 
 	// incrementare l'active index
-	activeIndex--;
+	
 
 	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 
-	eleBtnRight.classList.remove('hidden');
-	if (activeIndex === 0) {
-		eleBtnLeft.classList.add('hidden');
-	}
+	// eleBtnRight.classList.remove('hidden');
+	// if (activeIndex === 0) {
+	// 	eleBtnLeft.classList.add('hidden');
+	// }
 });
 
 
