@@ -10,6 +10,8 @@ body {
 }
 
 .slider {
+	display: flex;
+	flex-direction: row;
 	position: relative;
 	margin: auto;
 	height: 80%;
@@ -47,6 +49,8 @@ body {
 }
 
 .slider-img {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	inset: 0;
 	display: none;
@@ -62,4 +66,25 @@ body {
 
 .hidden {
 	visibility: hidden;
+}
+
+.thumbs {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: -180px;
+}
+
+.thumb-img {
+	height: 70px;
+	margin: 5px;
+	border: 1px solid fuchsia;
+	opacity: 0.5;
+}
+
+.thumb-img-active {
+	margin: 5px;
+	border: 1px solid fuchsia;
+	height: 70px;
+
 }

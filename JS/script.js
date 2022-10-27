@@ -9,6 +9,7 @@ const arrImages = [
 const eleSlider = document.querySelector('.slider');
 const eleBtnLeft = document.querySelector('.btn-left');
 const eleBtnRight = document.querySelector('.btn-right');
+const eleSliderThumbs = document.querySelector('.thumbs')
 
 
 for (let i = 0; i < arrImages.length; i++) {
@@ -19,16 +20,28 @@ for (let i = 0; i < arrImages.length; i++) {
 		eleImg.classList.add('active');
 	}
 	eleSlider.append(eleImg);
+
+	//thumbs
+
+	// const eleThumb = document.createElement('img');
+	// eleThumb.src = arrImages[i];
+	// eleThumb.classList.add('thumb-img');
+	// if (i === 0) {
+	// 	eleThumb.classList.add('active');
+	// }
+	// eleSliderThumbs.append(eleThumb);
 }
 
 
-const listEleImg = document.querySelectorAll('.slider-img'); 
+const listEleImg = document.querySelectorAll('.slider-img');
+// const listThumbs = document.querySelector('.thumb-img') 
 let activeIndex = 0;
 
 
 // BOTTONE SOTTO
 eleBtnRight.addEventListener('click', function () {
 	listEleImg[activeIndex].classList.remove('active');
+	// listThumbs[activeIndex].classList.remove('active');
 
     // ciclo infinto
     if (activeIndex === arrImages.length - 1){
@@ -38,6 +51,7 @@ eleBtnRight.addEventListener('click', function () {
     }
 
 	listEleImg[activeIndex].classList.add('active');
+	// listThumbs[activeIndex].classList.add('active');
 
 	eleBtnLeft.classList.remove('hidden');
 	if (activeIndex === listEleImg.length + 1) {
@@ -60,6 +74,7 @@ eleBtnLeft.addEventListener('click', function () {
 	eleBtnRight.classList.remove('hidden');
 	if (activeIndex === listEleImg.length + 1) {
 		eleBtnLeft.classList.add('hidden');
+		// listThumbs[activeIndex].classList.add('active');
 	}
 });
 
